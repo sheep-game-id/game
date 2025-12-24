@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useGame } from './GameContext';
 
 const AnswerPhase = () => {
@@ -9,11 +9,6 @@ const AnswerPhase = () => {
   // Find current player's ID
   const currentPlayer = players.find(p => p.name === playerName);
   const playerId = currentPlayer?.id || 'unknown';
-
-  useEffect(() => {
-    setAnswer('');
-    setSubmitted(false);
-  }, [currentQuestion]);
 
   const handleSubmit = () => {
     if (answer.trim()) {

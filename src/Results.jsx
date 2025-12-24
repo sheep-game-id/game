@@ -1,7 +1,7 @@
 import { useGame } from './GameContext';
 
 const Results = () => {
-  const { players, answers, questionHistory, isHost, nextQuestion, resetGame } = useGame();
+  const { players, questionHistory, isHost, nextQuestion, resetGame } = useGame();
 
   const lastRound = questionHistory[questionHistory.length - 1];
   

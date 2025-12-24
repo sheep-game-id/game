@@ -5,7 +5,7 @@ import AnswerPhase from './AnswerPhase';
 import Results from './Results';
 
 function GameFlow() {
-  const { gameState } = useGame();
+  const { gameState, currentQuestion } = useGame();
 
   switch (gameState) {
     case 'lobby':
@@ -13,7 +13,7 @@ function GameFlow() {
     case 'question':
       return <Lobby />;
     case 'answering':
-      return <AnswerPhase />;
+      return <AnswerPhase key={currentQuestion} />;
     case 'results':
       return <Results />;
     default:
